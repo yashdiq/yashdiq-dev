@@ -1,0 +1,2 @@
+module WawHelper
+end

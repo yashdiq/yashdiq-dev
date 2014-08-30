@@ -1,0 +1,38 @@
+<ul id="tiles">
+  <% @query.each do |q| %>
+    <li id="item" onclick="location.href='#';">
+      <%= image_tag q.image_location, width: q.width, height: q.height %>
+      <div class="post-info">
+        <div class="post-basic-info">
+            <h3>
+              <%= link_to q.title, q %>
+            </h3>
+            <span>
+              <%= link_to("#") do %>
+                <label> </label><span>Movies</span>
+              <% end %>
+            </span>
+        </div>
+        <div class="post-info-rate-share">
+            <div class="rateit">
+              <span> </span>
+            </div>
+            <div class="post-share">
+              <span> </span>
+            </div>
+            <div class="clear"> </div>
+        </div>
+      </div>
+    </li>
+  <% end  %>
+  <!-- End of grid blocks -->
+</ul>
+
+<% if (!@next_page.blank?) %>
+  <div class="navigate"><%= link_to "Next", "?p=#{@next_page}" %></div>
+<% else %>
+  <div class="navigate"><span>No more page to load.</span></div>
+<% end %>
+
+  
+  
